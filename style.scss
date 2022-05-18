@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+// Colors
+$Strong_Cyan: #26baa4;
+$Light_Blue: #6173ff;
+$Dark_Grayish_Blue: #4c545d;
+$Grayish_Blue: #9fabb2;
+
+// Typography
+
+$Font_Size: 18px;
+$Font_Family: "Bai Jamjuree", sans-serif;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+body {
+  font-family: $Font_Family;
+  font-size: $Font_Size;
+//   background: url("../images/bg-header-mobile.png") no-repeat fixed 100%;
+//   background-size: cover;
+}
+
+main {
+  @include flex();
+  flex-direction: column;
+  margin: 1.5rem;
+  text-align: center;
+}
+
+
+.first {
+  margin: 4rem 0;
+  line-height: 1.5rem;
+  h1 {
+      line-height: 2.5rem;
+    font-size: 2rem;
+    color: $Dark_Grayish_Blue;
+  }
+  p {
+    font-size: .9rem;
+    color: $Grayish_Blue;
+  }
+  .buttons-first {
+    margin-top: 2rem;
+    @include flex();
+    flex-direction: column;
+    gap: 1rem;
+
+    button {
+      width: 90%;
+      padding: 0.8rem;
+      border-radius: 9rem;
+      border: none;
+      background-color: $Strong_Cyan;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    button:nth-child(2) {
+      background-color: $Light_Blue;
+    }
+  }
+}
+
+.second {
+  @extend .first;
+
+  img{
+      margin: 2rem 0;
+      width: 100%;
+  }
+}
+.third{
+    @extend .second;
+}
