@@ -12,68 +12,125 @@ $Font_Size: 18px;
 $Font_Family: "Bai Jamjuree", sans-serif;
 
 @mixin flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @content;
+display: flex;
+justify-content: center;
+align-items: center;
+@content;
 }
 
 body {
-  font-family: $Font_Family;
-  font-size: $Font_Size;
+font-family: $Font_Family;
+font-size: $Font_Size;
 //   background: url("../images/bg-header-mobile.png") no-repeat fixed 100%;
 //   background-size: cover;
 }
 
 main {
-  @include flex();
-  flex-direction: column;
-  margin: 1.5rem;
-  text-align: center;
+@include flex();
+flex-direction: column;
+margin: 1.5rem;
+text-align: center;
 }
 
 
 .first {
-  margin: 4rem 0;
-  line-height: 1.5rem;
-  h1 {
-      line-height: 2.5rem;
-    font-size: 2rem;
-    color: $Dark_Grayish_Blue;
-  }
-  p {
-    font-size: .9rem;
-    color: $Grayish_Blue;
-  }
-  .buttons-first {
-    margin-top: 2rem;
-    @include flex();
-    flex-direction: column;
-    gap: 1rem;
-
-    button {
-      width: 90%;
-      padding: 0.8rem;
-      border-radius: 9rem;
-      border: none;
-      background-color: $Strong_Cyan;
-      color: white;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    }
-    button:nth-child(2) {
-      background-color: $Light_Blue;
-    }
-  }
+margin: 4rem 0;
+line-height: 1.5rem;
+h1 {
+line-height: 2.5rem;
+font-size: 1.8rem;
+color: $Dark_Grayish_Blue;
 }
+p {
+font-size: 1rem;
+color: $Grayish_Blue;
+}
+.buttons {
+margin-top: 2rem;
+@include flex();
+flex-direction: column;
+gap: 1rem;
 
+button {
+width: 90%;
+padding: 0.8rem;
+border-radius: 9rem;
+border: none;
+background-color: $Strong_Cyan;
+color: white;
+box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+button:nth-child(2) {
+background-color: $Light_Blue;
+}
+button:hover {
+opacity: .8;
+cursor: pointer;
+}
+}
+}
 .second {
-  @extend .first;
+@extend .first;
 
-  img{
-      margin: 2rem 0;
-      width: 100%;
-  }
+img{
+margin: 2rem 0;
+width: 100%;
+}
 }
 .third{
-    @extend .second;
+@extend .second;
+}
+.four{
+@extend .second;
+
+
+@for $i from 1 through 3{
+.f-#{$i} img{
+width: 20%;
+}
+.f-#{$i} h1 {
+font-size: 1.5rem;
+}
+}
+}
+.five{
+@extend .second;
+@include flex();
+flex-direction: column;
+gap: 1rem;
+img{
+width: 80%;
+}
+}
+.six{
+@extend .second;
+}
+footer{
+    @include flex();
+    flex-direction: column;
+    background-color: rgb(248, 248, 248);
+  img{
+    margin-top: 3rem;
+    width: 15%;
+  }
+
+  .links{
+    text-decoration: none;
+    margin: 2rem 0 0 0;
+    line-height: 3.5rem;
+    @include flex();
+    flex-direction: column;
+   
+    a{
+      text-decoration: none;
+      color: $Dark_Grayish_Blue;
+    }
+  }
+
+  .icons{
+    @include flex();
+    gap: 2rem;
+    width: 40%;
+    margin-bottom: 2rem;
+  }
 }
