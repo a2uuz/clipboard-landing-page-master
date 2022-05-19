@@ -2,6 +2,8 @@
 body {
   font-family: "Bai Jamjuree", sans-serif;
   font-size: 18px;
+  background: url("../images/bg-header-mobile.png") no-repeat scroll top;
+  background-size: contain;
 }
 
 main {
@@ -185,6 +187,10 @@ footer .icons svg *:hover {
 }
 
 @media (min-width: 700px) {
+  body {
+    background: url("../images/bg-header-desktop.png") no-repeat scroll top;
+    background-size: contain;
+  }
   .first, .second, .third, .four, .five, .six {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -199,7 +205,13 @@ footer .icons svg *:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 50%;
+    width: 45%;
+  }
+  .first img, .second img, .third img, .four img, .five img, .six img {
+    width: 17%;
+  }
+  .first h1, .second h1, .third h1, .four h1, .five h1, .six h1 {
+    line-height: 1rem;
   }
   .first .buttons, .second .buttons, .third .buttons, .four .buttons, .five .buttons, .six .buttons {
     display: -webkit-box;
@@ -250,9 +262,7 @@ footer .icons svg *:hover {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    align-items: center;
     gap: 4rem;
   }
   .second aside img, .third aside img, .four aside img, .five aside img, .six aside img {
@@ -263,6 +273,15 @@ footer .icons svg *:hover {
   .second aside section, .third aside section, .four aside section, .five aside section, .six aside section {
     text-align: left;
     width: 26%;
+  }
+  .second aside section .s-1, .third aside section .s-1, .four aside section .s-1, .five aside section .s-1, .six aside section .s-1 {
+    padding-bottom: 2rem;
+  }
+  .second aside section .s-2, .third aside section .s-2, .four aside section .s-2, .five aside section .s-2, .six aside section .s-2 {
+    padding-bottom: 2rem;
+  }
+  .second aside section .s-3, .third aside section .s-3, .four aside section .s-3, .five aside section .s-3, .six aside section .s-3 {
+    padding-bottom: 2rem;
   }
   .third {
     display: -webkit-box;
@@ -280,7 +299,7 @@ footer .icons svg *:hover {
             flex-direction: column;
   }
   .third .head {
-    width: 80%;
+    width: 55%;
   }
   .third img {
     width: 60%;
