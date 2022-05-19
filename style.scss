@@ -12,125 +12,222 @@ $Font_Size: 18px;
 $Font_Family: "Bai Jamjuree", sans-serif;
 
 @mixin flex {
-display: flex;
-justify-content: center;
-align-items: center;
-@content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
 }
 
 body {
-font-family: $Font_Family;
-font-size: $Font_Size;
-//   background: url("../images/bg-header-mobile.png") no-repeat fixed 100%;
-//   background-size: cover;
+  font-family: $Font_Family;
+  font-size: $Font_Size;
+  //   background: url("../images/bg-header-mobile.png") no-repeat fixed 100%;
+  //   background-size: cover;
 }
 
 main {
-@include flex();
-flex-direction: column;
-margin: 1.5rem;
-text-align: center;
+  @include flex();
+  flex-direction: column;
+  margin: 1.5rem;
+  text-align: center;
 }
-
 
 .first {
-margin: 4rem 0;
-line-height: 1.5rem;
-h1 {
-line-height: 2.5rem;
-font-size: 1.8rem;
-color: $Dark_Grayish_Blue;
-}
-p {
-font-size: 1rem;
-color: $Grayish_Blue;
-}
-.buttons {
-margin-top: 2rem;
-@include flex();
-flex-direction: column;
-gap: 1rem;
-
-button {
-width: 90%;
-padding: 0.8rem;
-border-radius: 9rem;
-border: none;
-background-color: $Strong_Cyan;
-color: white;
-box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-button:nth-child(2) {
-background-color: $Light_Blue;
-}
-button:hover {
-opacity: .8;
-cursor: pointer;
-}
-}
-}
-.second {
-@extend .first;
-
-img{
-margin: 2rem 0;
-width: 100%;
-}
-}
-.third{
-@extend .second;
-}
-.four{
-@extend .second;
-
-
-@for $i from 1 through 3{
-.f-#{$i} img{
-width: 20%;
-}
-.f-#{$i} h1 {
-font-size: 1.5rem;
-}
-}
-}
-.five{
-@extend .second;
-@include flex();
-flex-direction: column;
-gap: 1rem;
-img{
-width: 80%;
-}
-}
-.six{
-@extend .second;
-}
-footer{
+  margin: 3.5rem 0;
+  line-height: 1.5rem;
+  img {
+    margin-bottom: 2rem;
+    width: 20%;
+  }
+  h1 {
+    line-height: 2.5rem;
+    font-size: 1.9rem;
+    color: $Dark_Grayish_Blue;
+  }
+  p {
+    font-size: 1rem;
+    color: $Grayish_Blue;
+  }
+  .buttons {
+    margin-top: 2rem;
     @include flex();
     flex-direction: column;
-    background-color: rgb(248, 248, 248);
-  img{
-    margin-top: 3rem;
-    width: 15%;
-  }
+    gap: 1rem;
 
-  .links{
+    button {
+      width: 90%;
+      padding: 0.8rem;
+      border-radius: 9rem;
+      border: none;
+      background-color: $Strong_Cyan;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    button:nth-child(2) {
+      background-color: $Light_Blue;
+    }
+    button:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}
+.second {
+  @extend .first;
+
+  img {
+    margin: 2rem 0;
+    width: 100%;
+  }
+}
+.third {
+  @extend .second;
+}
+.four {
+  @extend .second;
+
+  img {
+    max-width: 15%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+.five {
+  @extend .second;
+  @include flex();
+  flex-direction: column;
+  gap: 1rem;
+  img {
+    width: 70%;
+  }
+}
+.six {
+  @extend .second;
+}
+footer {
+  @include flex();
+  flex-direction: column;
+  background-color: rgba(235, 235, 235, 0.712);
+  gap: 3rem;
+  height: 15vh;
+
+  img {
+    max-width: 15%;
+  }
+  .links {
     text-decoration: none;
-    margin: 2rem 0 0 0;
     line-height: 3.5rem;
     @include flex();
     flex-direction: column;
-   
-    a{
+
+    a {
       text-decoration: none;
       color: $Dark_Grayish_Blue;
+
+      &:hover {
+        color: $Strong_Cyan;
+      }
     }
   }
-
-  .icons{
+  .icons {
     @include flex();
     gap: 2rem;
-    width: 40%;
-    margin-bottom: 2rem;
+    max-width: 40%;
+
+    svg *:hover {
+      fill: $Strong_Cyan;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .first {
+    @include flex();
+    flex-direction: column;
+    width: 50%;
+    .buttons {
+      @include flex();
+      flex-direction: row;
+      width: 70%;
+    }
+  }
+  .second {
+    @include flex();
+    flex-direction: column;
+    width: 100%;
+    .head {
+      width: 47%;
+      margin-bottom: 3rem;
+    }
+    aside {
+      @include flex();
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 4rem;
+      img {
+        width: 60%;
+        position: relative;
+        right: 4.5rem;
+      }
+      section {
+        text-align: left;
+        width: 26%;
+      }
+    }
+  }
+  .third {
+    @include flex();
+    flex-direction: column;
+    .head {
+      width: 80%;
+    }
+    img {
+      width: 60%;
+    }
+  }
+  .four {
+    section {
+      @include flex();
+      margin: 0 12rem;
+      @for $i from 1 through 3 {
+        .f-#{$i} {
+          width: 35%;
+        }
+      }
+    }
+  }
+  .five {
+    @include flex;
+    flex-direction: row;
+    gap: 5rem;
+    width: 80%;
+  }
+  .six {
+    @include flex();
+    flex-direction: column;
+    width: 50%;
+    .buttons {
+      @include flex();
+      flex-direction: row;
+      width: 70%;
+    }
+  }
+  footer {
+    @include flex();
+    flex-direction: row;
+    height: 25vh;
+    gap: 9rem;
+
+    img {
+      margin: 0;
+      max-width: 5%;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: 1.5fr 1.5fr 1fr;
+      margin-right: 4rem;
+    }
   }
 }
