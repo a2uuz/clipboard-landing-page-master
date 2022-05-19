@@ -34,7 +34,7 @@ main {
   width: 20%;
 }
 
-.first h1, .second h1, .third h1, .four h1, .five h1, .six h1 {
+.first .title, .second .title, .third .title, .four .title, .five .title, .six .title {
   line-height: 2.5rem;
   font-size: 1.9rem;
   color: #4c545d;
@@ -92,7 +92,7 @@ main {
   max-width: 15%;
 }
 
-.four h1 {
+.four .title {
   font-size: 1.5rem;
 }
 
@@ -114,7 +114,7 @@ main {
 }
 
 .five img {
-  width: 70%;
+  width: 90%;
 }
 
 footer {
@@ -210,7 +210,7 @@ footer .icons svg *:hover {
   .first img, .second img, .third img, .four img, .five img, .six img {
     width: 17%;
   }
-  .first h1, .second h1, .third h1, .four h1, .five h1, .six h1 {
+  .first .title, .second .title, .third .title, .four .title, .five .title, .six .title {
     line-height: 1rem;
   }
   .first .buttons, .second .buttons, .third .buttons, .four .buttons, .five .buttons, .six .buttons {
