@@ -21,8 +21,8 @@ $Font_Family: "Bai Jamjuree", sans-serif;
 body {
   font-family: $Font_Family;
   font-size: $Font_Size;
-  //   background: url("../images/bg-header-mobile.png") no-repeat fixed 100%;
-  //   background-size: cover;
+  background: url("../images/bg-header-mobile.png") no-repeat scroll top;
+  background-size: contain;
 }
 
 main {
@@ -143,10 +143,20 @@ footer {
 }
 
 @media (min-width: 700px) {
+  body {
+    background: url("../images/bg-header-desktop.png") no-repeat scroll top;
+    background-size: contain;
+  }
   .first {
     @include flex();
     flex-direction: column;
-    width: 50%;
+    width: 45%;
+    img {
+      width: 17%;
+    }
+    h1 {
+      line-height: 1rem;
+    }
     .buttons {
       @include flex();
       flex-direction: row;
@@ -164,7 +174,7 @@ footer {
     aside {
       @include flex();
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
       gap: 4rem;
       img {
         width: 60%;
@@ -174,6 +184,12 @@ footer {
       section {
         text-align: left;
         width: 26%;
+
+        @for $i from 1 through 3 {
+          .s-#{$i} {
+            padding-bottom: 2rem;
+          }
+        }
       }
     }
   }
@@ -181,7 +197,7 @@ footer {
     @include flex();
     flex-direction: column;
     .head {
-      width: 80%;
+      width: 55%;
     }
     img {
       width: 60%;
